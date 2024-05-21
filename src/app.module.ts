@@ -1,11 +1,12 @@
+import { SeedController } from './seed/seed.controller';
 import { Module } from '@nestjs/common';
-import { CarsModule } from './cars/cars.module';
 import { BrandsModule } from './brands/brands.module';
+import { CarsModule } from './cars/cars.module';
+import { SeedService } from './seed/seed.service';
 
 @Module({
-  imports: [CarsModule, BrandsModule],
-  controllers: [],
-  providers: [],
-  exports: [],
+  controllers: [ SeedController ],
+  providers: [ SeedService ],
+  imports: [ CarsModule, BrandsModule ]
 })
-export class AppModule {}
+export class SeedModule {}
